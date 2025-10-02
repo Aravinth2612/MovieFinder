@@ -10,10 +10,10 @@ function Details() {
     useEffect(() => {
         async function fetchMovie() {
             try {
-                const res = await axios.get(`https://www.omdbapi.com/`, {
+                const result = await axios.get(`https://www.omdbapi.com/`, {
                     params: { i: id, apikey: "47eae1d8" },
                 });
-                setMovie(res.data);
+                setMovie(result.data);
             } catch (err) {
                 console.log(err);
             }
