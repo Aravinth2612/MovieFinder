@@ -10,13 +10,7 @@ import Favorites from "./Favorites";
 function App() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [favorites, setFavorites] = useState([]);
-
-  useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem('favorites')) || [];
-    console.log(JSON.parse(localStorage.getItem('favorites')));
-    setFavorites(stored);
-  }, []);
+  const [favorites, setFavorites] = useState( JSON.parse(localStorage.getItem('favorites')) || []);
 
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
